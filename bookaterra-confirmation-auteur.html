@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bookaterra – Candidature enregistrée ✍️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-dark: #0c0a12;
+      --violet: #8b5cf6;
+      --violet-bright: #a78bfa;
+      --coral: #f97066;
+      --coral-bright: #fca5a1;
+      --coral-deep: #ef4444;
+      --coral-glow: rgba(249, 112, 102, 0.25);
+      --coral-glow-strong: rgba(249, 112, 102, 0.4);
+      --teal: #2dd4bf;
+      --yellow: #fbbf24;
+      --white: #ffffff;
+      --white-soft: rgba(255, 255, 255, 0.85);
+      --white-muted: rgba(255, 255, 255, 0.45);
+      --border-dark: rgba(255, 255, 255, 0.08);
+      --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --font-body: 'DM Sans', 'General Sans', system-ui, sans-serif;
+      --font-mono: 'Space Mono', monospace;
+      --radius: 14px;
+      --radius-lg: 22px;
+      --radius-pill: 100px;
+    }
+
+    html { font-size: 16px; }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-dark);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Background orbs */
+    .bg-orb {
+      position: fixed; border-radius: 50%;
+      filter: blur(100px); pointer-events: none; z-index: 0;
+    }
+    .bg-orb-1 {
+      width: 500px; height: 500px;
+      background: var(--coral);
+      opacity: 0.1;
+      top: -15%; right: -10%;
+      animation: float 10s ease-in-out infinite;
+    }
+    .bg-orb-2 {
+      width: 400px; height: 400px;
+      background: var(--violet);
+      opacity: 0.07;
+      bottom: -15%; left: -10%;
+      animation: float 12s ease-in-out infinite 2s;
+    }
+    .bg-orb-3 {
+      width: 200px; height: 200px;
+      background: var(--yellow);
+      opacity: 0.05;
+      top: 50%; left: 30%;
+      animation: float 8s ease-in-out infinite 4s;
+    }
+
+    /* Grid pattern */
+    .bg-grid {
+      position: fixed; inset: 0; z-index: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 20%, transparent 70%);
+      -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 20%, transparent 70%);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-14px); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+
+    .container {
+      position: relative; z-index: 1;
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 40px 28px;
+      text-align: center;
+    }
+
+    /* Logo */
+    .logo {
+      display: inline-flex; align-items: center; gap: 11px;
+      text-decoration: none; margin-bottom: 48px;
+      animation: fadeUp 0.6s ease-out both;
+    }
+    .logo-text {
+      font-family: var(--font-display);
+      font-size: 1.3rem; font-weight: 800;
+      color: white; letter-spacing: -0.03em;
+    }
+
+    /* Success icon */
+    .success-icon {
+      width: 90px; height: 90px;
+      margin: 0 auto 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--coral), var(--coral-bright));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.4rem;
+      box-shadow: 0 0 60px var(--coral-glow-strong), 0 0 120px var(--coral-glow);
+      animation: scaleIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
+    }
+
+    /* Main heading */
+    .main-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 12px;
+      animation: fadeUp 0.7s ease-out 0.3s both;
+    }
+    .main-title .gradient {
+      background: linear-gradient(135deg, var(--coral-bright), var(--yellow), var(--coral));
+      background-size: 200% auto;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 4s linear infinite;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--white-muted);
+      margin-bottom: 48px;
+      animation: fadeUp 0.7s ease-out 0.4s both;
+    }
+
+    /* Card */
+    .questionnaire-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-lg);
+      padding: 40px 32px;
+      backdrop-filter: blur(16px);
+      animation: fadeUp 0.7s ease-out 0.5s both;
+    }
+
+    .card-greeting {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--white-soft);
+      margin-bottom: 12px;
+    }
+
+    .card-text {
+      font-size: 0.95rem;
+      color: var(--white-muted);
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .btn-questionnaire {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--font-display); font-weight: 700; font-size: 1rem;
+      padding: 16px 36px; border-radius: var(--radius-pill);
+      border: none; cursor: pointer; text-decoration: none;
+      background: var(--coral); color: white;
+      box-shadow: 0 8px 32px var(--coral-glow);
+      transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      letter-spacing: -0.01em;
+    }
+    .btn-questionnaire:hover {
+      background: var(--coral-deep);
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 12px 40px var(--coral-glow-strong);
+    }
+
+    /* Back link */
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 36px;
+      font-size: 0.85rem; font-weight: 500;
+      color: var(--white-muted);
+      text-decoration: none;
+      transition: color 0.25s;
+      animation: fadeUp 0.7s ease-out 0.6s both;
+    }
+    .back-link:hover { color: var(--coral-bright); }
+
+    @media (max-width: 480px) {
+      .container { padding: 32px 18px; }
+      .questionnaire-card { padding: 28px 20px; }
+      .success-icon { width: 72px; height: 72px; font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="bg-orb bg-orb-1"></div>
+<div class="bg-orb bg-orb-2"></div>
+<div class="bg-orb bg-orb-3"></div>
+<div class="bg-grid"></div>
+
+<div class="container">
+
+  <a href="bookaterra-landing-v6.html" class="logo">
+    <svg width="38" height="38" viewBox="0 0 56 56" fill="none">
+      <defs><linearGradient id="rnav" x1="0" y1="0" x2="56" y2="56"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#f97066"/></linearGradient></defs>
+      <circle cx="28" cy="15" r="12" stroke="#8b5cf6" stroke-width="1.4" fill="none" opacity="0.6"/>
+      <circle cx="39.3" cy="19.5" r="12" stroke="#a78bfa" stroke-width="1.4" fill="none" opacity="0.6"/>
+      <circle cx="42.2" cy="31.5" r="12" stroke="#c084fc" stroke-width="1.4" fill="none" opacity="0.6"/>
+      <circle cx="34" cy="41" r="12" stroke="#e879f9" stroke-width="1.4" fill="none" opacity="0.6"/>
+      <circle cx="22" cy="41" r="12" stroke="#f472b6" stroke-width="1.4" fill="none" opacity="0.6"/>
+      <circle cx="13.8" cy="31.5" r="12" stroke="#f97066" stroke-width="1.4" fill="none" opacity="0.6"/>
+      <circle cx="16.7" cy="19.5" r="12" stroke="#fbbf24" stroke-width="1.4" fill="none" opacity="0.6"/>
+      <circle cx="28" cy="28" r="4" fill="url(#rnav)" opacity="0.9"/>
+    </svg>
+    <span class="logo-text">Bookaterra</span>
+  </a>
+
+  <div class="success-icon">✨</div>
+
+  <h1 class="main-title">
+    Votre email est bien arrivé<br/>sur <span class="gradient">Bookaterra</span>
+  </h1>
+
+  <p class="subtitle">On revient vers toi très vite. Peaufine ton prochain chapitre en attendant !</p>
+
+  <div class="questionnaire-card">
+    <div class="card-greeting">✍️ Cher auteur,</div>
+    <p class="card-text">
+      Voici un court questionnaire à remplir pour nous aider à répondre au mieux à vos attentes !<br/>
+      Ça ne prend que quelques minutes et ça nous aide énormément.
+    </p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeLaR14lOdRRldtU7X4ek_5dnwIW_tL9tURd6dp0vsdrF5ddw/viewform?usp=dialog" target="_blank" rel="noopener" class="btn-questionnaire">
+      Remplir le questionnaire →
+    </a>
+  </div>
+
+  <a href="bookaterra-landing-v6.html" class="back-link">← Retour à l'accueil</a>
+
+</div>
+
+</body>
+</html>
